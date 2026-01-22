@@ -1,0 +1,119 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../images/landbkg.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    font-family: 'Paytone One', sans-serif;
+    position: relative;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 70px;
+}
+
+.logo {
+    font-size: 28px;
+    color: white;
+}
+
+.logo span {
+    background: linear-gradient(90deg, #ff4ec7, #b547ff, #64efda);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    font-size: 14px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+
+.journey-btn {
+    background-color: white;   
+    color: black;              
+    padding: 9px 18px;
+    border-radius: 7px;
+    font-size: 13px;
+    text-decoration: none;
+    transition: none;
+    outline: none;
+}
+
+
+.nav-links a.journey-btn:hover,
+.nav-links a.journey-btn:active,
+.nav-links a.journey-btn:visited,
+.nav-links a.journey-btn:focus {
+    background-color: white;
+    color: black;
+    transform: none;
+}
+
+
+.hero {
+    margin-top: 140px; 
+    margin-left: 70px;
+    max-width: 760px;
+}
+
+.hero h1 {
+    font-size: 72px;
+    color: white;
+    line-height: 1.05;
+}
+
+.hero h1 span {
+    background: linear-gradient(90deg, #ff4ec7, #b547ff, #64efda);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    margin-top: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    max-width: 540px;
+    line-height: 1.7;
+}
+
+
+.social {
+    position: absolute;
+    bottom: 35px;
+    left: 70px;
+    display: flex;
+    gap: 16px;
+}
+
+.social a {
+    color: #ffffff;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social a:hover {
+    color: #ffcffe;
+    transform: translateY(-2px);
+}
