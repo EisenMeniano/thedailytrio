@@ -1,0 +1,22 @@
+name: Deploy to Ubuntu server
+
+on:
+  push:
+    branches: ["main"]   # run when someone pushes to main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy over SSH
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            cd /home/eisen/myproject/src/ecom
+            git pull origin main
+            sudo supervisorctl restart ecom
