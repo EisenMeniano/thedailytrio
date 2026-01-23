@@ -24,18 +24,6 @@ body.eisen-scroll{
   margin: 0 !important;
   max-width: none !important;
   width: 100% !important;
-
-  min-height: calc(100vh - 90px);
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  align-items: center;
-  padding: 40px 70px;
-
-  background: url("../images/eisen/hero_bg.svg") no-repeat center center;
-  background-size: cover;
-
-  /* optional "fixed" effect */
-  background-attachment: fixed;
 }
 
 
