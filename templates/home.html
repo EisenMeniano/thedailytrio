@@ -13,16 +13,7 @@
 <body>
 
     <!-- NAVBAR -->
-    <div class="navbar">
-        <div class="logo">The Daily <span>Trio</span></div>
-
-        <div class="nav-links">
-            {% if user.is_authenticated %}
-                <a href="#">{{ user.username|capfirst }}</a>  <!-- Show only logged-in username -->
-            {% endif %}
-            <a href="{% url 'logout' %}" class="journey-btn">Logout</a>  <!-- Logout button -->
-        </div>
-    </div>
+{% include 'partials/navbar.html' %}
 
     <!-- HERO -->
     <div class="hero">

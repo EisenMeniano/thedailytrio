@@ -1,0 +1,21 @@
+<div class="navbar">
+    <div class="logo">
+        <a href="{% if user.is_authenticated %}{% url 'home' %}{% else %}{% url 'login' %}{% endif %}"
+           style="text-decoration:none;color:inherit;">
+            The Daily <span>Trio</span>
+        </a>
+    </div>
+
+    <div class="nav-links">
+        <a href="{% url 'portfolio' 'abi' %}">Abi</a>
+        <a href="{% url 'portfolio' 'mayumi' %}">Mayumi</a>
+        <a href="{% url 'portfolio' 'eisen' %}">Eisen</a>
+
+        {% if user.is_authenticated %}
+            <a href="#">{{ user.username|capfirst }}</a>
+            <a href="{% url 'logout' %}" class="journey-btn">Logout</a>
+        {% else %}
+            <a href="{% url 'login' %}" class="journey-btn">Login</a>
+        {% endif %}
+    </div>
+</div>

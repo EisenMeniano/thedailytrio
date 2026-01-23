@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.http import Http404
 
 def login_view(request):
     if request.method == "POST":
@@ -25,3 +26,16 @@ def index(request):
 def logout_view(request):
     logout(request)
     return redirect('login')
+def portfolio_view(request, person):
+    person = person.lower()
+
+    templates = {
+        "abi": "portfolio/abi.html",
+        "mayumi": "portfolio/mayumi.html",
+        "eisen": "portfolio/eisen.html",
+    }
+
+    if person not in templates:
+        raise Http404("Portfolio not found")
+
+    return render(request, templates[person])
