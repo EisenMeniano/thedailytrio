@@ -216,3 +216,79 @@ hr{
   .featured-grid{ grid-template-columns: 1fr; }
   .project-row{ grid-template-columns: 1fr; }
 }
+
+/* =========================
+   ABI LANDING (ISOLATED)
+========================= */
+
+.abi-landing{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+
+  padding: 30px 70px;
+
+  background: url("../images/abibkg.svg") no-repeat center;
+  background-size: cover;
+
+  font-family: 'Paytone One', sans-serif;
+}
+
+.abi-landing-left{
+  max-width: 520px;
+  color: white;
+}
+
+/* Hi, */
+.abi-landing .abi-hi{
+  font-size: 64px;
+  margin: 0;
+  line-height: 1;
+  font-weight: 400;
+}
+
+/* Im Abiguel */
+.abi-landing .abi-name{
+  font-size: 72px;
+  margin: 10px 0 12px;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.abi-landing .abi-name span{
+  opacity: 0.85;
+}
+
+/* Web and App Developer */
+.abi-landing .abi-role{
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 22px;
+  opacity: 0.85;
+}
+
+/* Description */
+.abi-landing .abi-desc{
+  font-size: 14px;
+  line-height: 1.8;
+  opacity: 0.9;
+  max-width: 480px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .abi-landing{
+    padding: 20px;
+  }
+
+  .abi-landing .abi-hi{
+    font-size: 48px;
+  }
+
+  .abi-landing .abi-name{
+    font-size: 56px;
+  }
+}
