@@ -1,14 +1,5 @@
 html { scroll-behavior: smooth; }
 
-body.eisen-scroll .navbar{
-  position: static !important;  /* normal flow */
-  top: auto !important;
-  left: auto !important;
-  right: auto !important;
-  z-index: auto !important;
-  background: transparent;
-  backdrop-filter: none;
-}
 body.eisen-scroll{
   margin: 0;
   min-height: 100vh;
