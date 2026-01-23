@@ -43,7 +43,7 @@ def portfolio_view(request, person):
     if person not in templates:
         raise Http404("Portfolio not found")
 
-    return render(request, templates[person])
+    return render(request, templates[person], {"who": person})
 
 
 def portfolio_main_view(request, person):
