@@ -18,9 +18,12 @@ body.eisen-scroll{
   grid-template-columns: 1.1fr 0.9fr;
   align-items: center;
   padding: 40px 70px;
-  background: radial-gradient(circle at 20% 40%, rgba(255,255,255,0.12), transparent 45%),
-              linear-gradient(135deg, #12002b, #070018);
+
+  /* CHANGE THIS BACKGROUND */
+  background: url("../images/eisen/hero_bg.svg") no-repeat center center;
+  background-size: cover;
 }
+
 
 .hero-title{
   font-family: 'Paytone One', sans-serif;
