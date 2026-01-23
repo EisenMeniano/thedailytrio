@@ -16,14 +16,34 @@ body.eisen-scroll{
 
 
 /* navbar already in style.css */
-.navbar{ position: sticky; top: 0; z-index: 20; }
+.navbar{
+  position: static;     /* normal navbar */
+  z-index: auto;
+  background: transparent;
+}
 
 /* HERO */
-.hero{
-  /* override homepage .hero rule */
+.eisen-hero{
+  width: 100%;
+  margin: 0;
+  max-width: none;
+
+  /* add space for navbar height */
+  padding-top: 40px; /* adjust to 100px / 140px if needed */
+
+  min-height: 100vh;
+
+  background: url("../images/eisen/hero_bg.svg") no-repeat top center;
+  background-size: cover;
+
+  /* IMPORTANT: background scrolls normally */
+  background-attachment: scroll;
+}
+
+.hero h1,
+.hero p {
   margin: 0 !important;
   max-width: none !important;
-  width: 100% !important;
 }
 
 
@@ -146,7 +166,7 @@ hr{
 
 /* Responsive */
 @media (max-width: 950px){
-  .hero{ grid-template-columns: 1fr; }
+  .eisen-hero{ grid-template-columns: 1fr; }
   .hero-title{ font-size: 58px; }
   .hero-right{ min-height: 360px; margin-top: 20px; }
   .featured-grid{ grid-template-columns: 1fr; }
