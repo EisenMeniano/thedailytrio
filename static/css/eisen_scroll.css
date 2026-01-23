@@ -16,18 +16,13 @@ body.eisen-scroll{
 
 
 /* navbar already in style.css */
-.navbar {
-    position: relative;   /* not fixed */
-    z-index: 20;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 30px 70px;   /* same as your style.css */
-    background: transparent; /* so it blends with hero bg */
-    backdrop-filter: none;
+.navbar{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 999;
+  background: transparent; /* keep it clean on top of hero */
 }
+
 /* HERO */
 .eisen-hero{
   width: 100%;
