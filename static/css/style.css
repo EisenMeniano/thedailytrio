@@ -1,7 +1,7 @@
 html { scroll-behavior: smooth; }
 
 /* =========================
-   Eisen page resets (override style.css)
+   Eisen page base (override style.css)
 ========================= */
 body.eisen-scroll{
   margin: 0;
@@ -16,10 +16,10 @@ body.eisen-scroll{
 }
 
 /* =========================
-   NAVBAR (normal scroll, NOT fixed)
+   NAVBAR (normal scroll - NOT fixed)
 ========================= */
 body.eisen-scroll .navbar{
-  position: static !important;             /* normal navbar (scrolls away) */
+  position: static !important;             /* scrolls away */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -27,7 +27,6 @@ body.eisen-scroll .navbar{
   background: transparent;
 }
 
-/* keep nav links clean */
 body.eisen-scroll .nav-links{
   display: flex;
   align-items: center;
@@ -37,43 +36,43 @@ body.eisen-scroll .nav-links{
 }
 
 /* =========================
-   HERO (Top section)
-   IMPORTANT: do NOT use class "hero" for Eisen page
-   You already changed it to eisen-hero in eisen.html ✅
+   HERO (fits like your 2nd photo)
+   IMPORTANT: eisen.html should use <section class="eisen-hero">
 ========================= */
 .eisen-hero{
   width: 100%;
   margin: 0 !important;
   max-width: none !important;
 
-  min-height: calc(100vh - 90px);
+  min-height: 100vh;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
 
-  padding: 40px 70px;
+  padding: 30px 70px;
 
-  background: url("../images/eisen/hero_bg.svg") no-repeat top center;
-  background-size: cover;
-  background-attachment: scroll; /* background moves normally */
+  background: url("../images/eisen/hero_bg.svg") no-repeat center;
+  background-size: contain;     /* NO ZOOM */
+  background-repeat: no-repeat;
+  background-attachment: scroll;
 }
 
-/* STOP style.css from affecting Eisen hero text */
+/* STOP style.css from affecting Eisen hero text if any .hero rules leak */
 body.eisen-scroll .hero h1,
 body.eisen-scroll .hero p{
   all: unset;
 }
 
-/* Eisen hero text */
+/* Left content */
 .hero-left{
-  max-width: 650px;
+  max-width: 620px;
 }
 
 .hero-title{
   font-family: 'Paytone One', sans-serif;
-  font-size: 82px;
+  font-size: 64px;        /* smaller like your 2nd photo */
   line-height: 0.95;
-  margin: 0 0 18px 0;
+  margin: 0 0 14px 0;
   color: white;
 }
 
@@ -81,8 +80,8 @@ body.eisen-scroll .hero p{
   opacity: 0.9;
   font-weight: 800;
   letter-spacing: 2px;
-  margin-bottom: 22px;
-  font-size: 14px;
+  margin-bottom: 18px;
+  font-size: 13px;
   color: white;
 }
 
@@ -91,18 +90,19 @@ body.eisen-scroll .hero p{
   align-items: center;
   gap: 10px;
   border: 2px solid rgba(255,255,255,0.35);
-  padding: 12px 18px;
+  padding: 10px 16px;
   border-radius: 999px;
   color: white;
   text-decoration: none;
   font-weight: 800;
+  font-size: 13px;
 }
 
 .hero-btn:hover{
   border-color: rgba(255,255,255,0.7);
 }
 
-/* Right side shapes */
+/* Right side shapes (if you still use individual PNG layers) */
 .hero-right{ position: relative; min-height: 520px; }
 .shape{ position: absolute; width: 160px; height: auto; }
 
@@ -207,10 +207,11 @@ hr{
 
   .eisen-hero{
     grid-template-columns: 1fr;
-    padding: 30px 20px;
+    padding: 20px 20px;
+    background-size: cover; /* on small screens, cover looks nicer */
   }
 
-  .hero-title{ font-size: 58px; }
+  .hero-title{ font-size: 52px; }
   .hero-right{ min-height: 360px; margin-top: 20px; }
   .featured-grid{ grid-template-columns: 1fr; }
   .project-row{ grid-template-columns: 1fr; }
