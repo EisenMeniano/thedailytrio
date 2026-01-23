@@ -1,52 +1,80 @@
 html { scroll-behavior: smooth; }
 
+/* =========================
+   PAGE BASE (Eisen only)
+========================= */
 body.eisen-scroll{
   margin: 0;
   min-height: 100vh;
 
-  /* THIS is the important part: remove homepage background image */
+  /* remove homepage background image */
   background-image: none !important;
-
-  /* your Eisen page background */
   background-color: #0b0020 !important;
 
   color: white;
   overflow-x: hidden;
 }
 
-
-/* navbar already in style.css */
-.navbar{
+/* =========================
+   NAVBAR (Eisen only)
+   Fixes overlapping / "sumasama"
+========================= */
+body.eisen-scroll .navbar{
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 999;
-  background: transparent; /* keep it clean on top of hero */
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 22px 70px;
+
+  background: rgba(8, 0, 20, 0.35);
+  backdrop-filter: blur(8px);
 }
 
-/* HERO */
+/* make the right side links stay on one line */
+body.eisen-scroll .nav-links{
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: nowrap;         /* prevents wrapping / overlap */
+  white-space: nowrap;       /* keeps Abi Mayumi Eisen Logout aligned */
+}
+
+/* keep logout button from shrinking */
+body.eisen-scroll .journey-btn{
+  white-space: nowrap;
+}
+
+/* =========================
+   HERO (Top section)
+========================= */
 .eisen-hero{
   width: 100%;
-  margin: 0;
-  max-width: none;
-
-  /* add space for navbar height */
-  padding-top: 120px; /* adjust to 100px / 140px if needed */
+  margin: 0 !important;
+  max-width: none !important;
 
   min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+
+  /* space for fixed navbar */
+  padding: 140px 70px 40px 70px;
 
   background: url("../images/eisen/hero_bg.svg") no-repeat top center;
   background-size: cover;
 
-  /* IMPORTANT: background scrolls normally */
+  /* scroll normally */
   background-attachment: scroll;
 }
 
-.hero h1,
-.hero p {
-  margin: 0 !important;
-  max-width: none !important;
+/* Left content */
+.hero-left{
+  max-width: 650px;
 }
-
 
 .hero-title{
   font-family: 'Paytone One', sans-serif;
@@ -75,6 +103,11 @@ body.eisen-scroll{
   font-weight: 800;
 }
 
+.hero-btn:hover{
+  border-color: rgba(255,255,255,0.7);
+}
+
+/* Right shapes */
 .hero-right{ position: relative; min-height: 520px; }
 .shape{ position: absolute; width: 160px; height: auto; }
 
@@ -84,7 +117,9 @@ body.eisen-scroll{
 .s-mouse{ bottom: 80px; left: 20px; width: 120px; }
 .s-lines{ top: 130px; right: 170px; width: 260px; opacity: 0.9; }
 
-/* FEATURED */
+/* =========================
+   FEATURED
+========================= */
 .featured{
   background: white;
   color: #111;
@@ -122,7 +157,9 @@ body.eisen-scroll{
   margin-bottom: 20px;
 }
 
-/* ALL PROJECTS */
+/* =========================
+   ALL PROJECTS
+========================= */
 .all-projects{
   background: white;
   color: #111;
@@ -165,10 +202,25 @@ hr{
   border-top: 1px solid #ddd;
 }
 
-/* Responsive */
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: 950px){
-  .hero{ grid-template-columns: 1fr; }
-  .hero-title{ font-size: 58px; }
+  body.eisen-scroll .navbar{
+    padding: 18px 20px;
+  }
+
+  body.eisen-scroll .nav-links{
+    gap: 16px;
+    font-size: 12px;
+  }
+
+  .eisen-hero{
+    grid-template-columns: 1fr;
+    padding: 120px 20px 30px 20px;
+  }
+
+  .hero-title{ font-size: 56px; }
   .hero-right{ min-height: 360px; margin-top: 20px; }
   .featured-grid{ grid-template-columns: 1fr; }
   .project-row{ grid-template-columns: 1fr; }
