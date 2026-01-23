@@ -1,187 +1,154 @@
+/* Smooth scroll */
 html { scroll-behavior: smooth; }
 
-/* =======================
-   PAGE RESET (override homepage css)
-======================= */
-body.eisen-scroll{
+/* ===== RESET homepage styling for Eisen page ===== */
+body.eisen-page{
   margin: 0;
   min-height: 100vh;
-  height: auto !important;
+  height: auto;
+
+  /* remove homepage background */
   background-image: none !important;
-  background-color: #0b0020 !important;
-  color: white;
+  background: #14002f !important;
+
+  font-family: 'Paytone One', sans-serif;
   overflow-x: hidden;
 }
 
-/* =======================
-   NAVBAR (normal, scrolls away)
-======================= */
-body.eisen-scroll .navbar{
+/* Navbar should behave normally (scrolls away) */
+body.eisen-page .navbar{
   position: static !important;
   padding: 30px 70px;
+  background: transparent;
 }
 
-/* =======================
-   HERO (NO ZOOM)
-   background-size: contain = fit whole image
-======================= */
+/* ===== HERO LAYOUT (matches your screenshot) ===== */
 .eisen-hero{
-  /* full width, full screen */
   width: 100%;
   min-height: 100vh;
 
-  /* kill style.css hero limits */
-  margin: 0 !important;
-  max-width: none !important;
-
-  /* layout */
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
 
   padding: 40px 70px;
+  box-sizing: border-box;
 
-  /* KEY PART (fix zoom) */
-  background-image: url("../images/eisen/hero_bg.svg");
+  /* background image = the purple hero background */
+  background-image: url("../images/eisen/hero_bg.png"); /* change to hero_bg.svg if svg */
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: contain;   /* ✅ THIS PREVENTS CROPPING */
+  background-size: cover;
 }
 
-/* text area */
+/* Left text */
 .hero-left{
-  max-width: 620px;
+  max-width: 560px;
 }
 
 .hero-title{
-  font-size: 64px;
+  color: #ffffff;
+  font-size: 78px;
   line-height: 0.95;
-  margin: 0 0 14px 0;
+  margin: 0 0 18px 0;
 }
 
 .hero-sub{
-  font-size: 13px;
-  letter-spacing: 2px;
-  margin-bottom: 18px;
-  opacity: 0.9;
+  margin: 0 0 26px 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.85);
 }
 
+.hero-sub-bold{
+  font-weight: 900;
+}
+
+/* Button like screenshot */
 .hero-btn{
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  border: 2px solid rgba(255,255,255,0.35);
-  padding: 10px 16px;
+
+  padding: 12px 22px;
   border-radius: 999px;
+
   color: white;
   text-decoration: none;
-  font-weight: 800;
-  font-size: 13px;
+  font-size: 14px;
+
+  border: 2px solid rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.06);
 }
 
-/* hide old floating png positions if you don't need them */
-.hero-right{ position: relative; min-height: 520px; }
-.shape{ position: absolute; width: 160px; height: auto; }
-.s-star1{ top: 40px; right: 40px; width: 180px; }
-.s-star2{ bottom: 40px; right: 10px; width: 220px; }
-.s-user{ top: 180px; left: 80px; width: 150px; }
-.s-mouse{ bottom: 80px; left: 20px; width: 120px; }
-.s-lines{ top: 130px; right: 170px; width: 260px; opacity: 0.9; }
-
-/* =======================
-   FEATURED + PROJECTS (unchanged)
-======================= */
-.featured{
-  background: white;
-  color: #111;
-  padding: 90px 70px;
+.hero-btn-icon{
+  font-size: 16px;
 }
 
-.featured h2{
-  text-align: center;
-  font-size: 44px;
-  margin: 0 0 40px 0;
-  font-weight: 400;
+/* Right side shapes */
+.hero-right{
+  position: relative;
+  min-height: 520px;
 }
 
-.featured-grid{
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr 0.8fr;
-  gap: 30px;
-  max-width: 1100px;
-  margin: 0 auto;
-  align-items: start;
+/* Base shape rules */
+.shape{
+  position: absolute;
+  height: auto;
+  pointer-events: none;
 }
 
-.big-left{
-  width: 100%;
-  border-radius: 12px;
-  display: block;
-  margin-bottom: 20px;
+/* Positions tuned to match screenshot */
+.star-top{
+  top: 40px;
+  right: 140px;
+  width: 140px;
 }
 
-.phone-col img,
-.small-col img{
-  width: 100%;
-  border-radius: 12px;
-  display: block;
-  margin-bottom: 20px;
+.user{
+  top: 210px;
+  right: 360px;
+  width: 170px;
 }
 
-.all-projects{
-  background: white;
-  color: #111;
-  padding: 90px 90px;
+.lines{
+  top: 130px;
+  right: 180px;
+  width: 360px;
+  opacity: 0.9;
 }
 
-.project-row{
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 50px;
-  align-items: start;
-  padding: 40px 0;
+.mouse{
+  bottom: 80px;
+  right: 420px;
+  width: 110px;
 }
 
-.project-text h3{
-  font-size: 34px;
-  margin: 0 0 12px 0;
-  font-weight: 500;
+.star-big{
+  bottom: 30px;
+  right: 40px;
+  width: 320px;
 }
 
-.meta{ margin: 6px 0; color: #333; }
-.stack{ margin-top: 10px; color: #1f4f3b; font-weight: 700; }
-.desc{ margin-top: 18px; color: #555; line-height: 1.7; max-width: 680px; }
-
-.project-media img{
-  width: 100%;
-  max-width: 420px;
-  display: block;
-  margin: 0 auto 20px auto;
-}
-
-.project-media.phones img{
-  max-width: 260px;
-  display: inline-block;
-  margin: 0 10px;
-}
-
-hr{
-  border: none;
-  border-top: 1px solid #ddd;
-}
-
-/* =======================
-   MOBILE
-======================= */
+/* ===== Responsive ===== */
 @media (max-width: 950px){
   .eisen-hero{
     grid-template-columns: 1fr;
-    padding: 20px 20px;
-    background-size: contain; /* still no crop */
+    padding: 24px;
+    background-size: cover;
   }
 
-  .hero-title{ font-size: 52px; }
-  .hero-right{ min-height: 360px; margin-top: 20px; }
-  .featured-grid{ grid-template-columns: 1fr; }
-  .project-row{ grid-template-columns: 1fr; }
+  .hero-title{
+    font-size: 56px;
+  }
+
+  .hero-right{
+    min-height: 420px;
+    margin-top: 24px;
+  }
+
+  .star-big{ width: 260px; right: 10px; }
+  .lines{ width: 300px; right: 70px; }
+  .user{ width: 140px; right: 260px; }
 }
