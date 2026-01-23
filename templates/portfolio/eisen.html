@@ -1,48 +1,125 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Eisen | Portfolio</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/portfolio.css' %}">
-    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap" rel="stylesheet">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eisen | Portfolio</title>
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/eisen_scroll.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="eisen-scroll">
 
-    {% include 'partials/navbar.html' %}
+  {% include 'partials/navbar.html' %}
 
-    <div class="portfolio">
-        <h1>Abi <span class="gradient">Portfolio</span></h1>
+  <!-- SECTION 1: HERO (your 1st picture) -->
+  <section class="hero" id="top">
+    <div class="hero-left">
+      <h1 class="hero-title">
+        Hi,<br>
+        I’m Eisen<br>
+        Meniano
+      </h1>
 
-        <div class="section">
-            <h2>About Me</h2>
-            <p>Write Abi's intro here.</p>
-        </div>
+      <p class="hero-sub">WEB AND APP DEVELOPER</p>
 
-        <div class="section">
-            <h2>Projects</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <h3>Project 1</h3>
-                    <p>Short description.</p>
-                </div>
-                <div class="card">
-                    <h3>Project 2</h3>
-                    <p>Short description.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Contact</h2>
-            <ul>
-                <li>Email: ...</li>
-                <li>GitHub: ...</li>
-            </ul>
-        </div>
+      <a class="hero-btn" href="#featured">LET’S START <span class="arrow">➜</span></a>
     </div>
+
+    <div class="hero-right">
+      <!-- Put your images in static/images/eisen/ -->
+      <img class="shape s-star1" src="{% static 'images/eisen/star1.png' %}" alt="">
+      <img class="shape s-star2" src="{% static 'images/eisen/star2.png' %}" alt="">
+      <img class="shape s-user"  src="{% static 'images/eisen/user.png' %}" alt="">
+      <img class="shape s-mouse" src="{% static 'images/eisen/mouse.png' %}" alt="">
+      <img class="shape s-lines" src="{% static 'images/eisen/lines.png' %}" alt="">
+    </div>
+  </section>
+
+  <!-- SECTION 2: FEATURED PROJECTS (your 2nd picture) -->
+  <section class="featured" id="featured">
+    <h2>Featured Projects</h2>
+
+    <div class="featured-grid">
+      <img src="{% static 'images/eisen/featured1.png' %}" alt="featured 1" class="big-left">
+      <img src="{% static 'images/eisen/featured2.png' %}" alt="featured 2" class="big-left">
+      <div class="phone-col">
+        <img src="{% static 'images/eisen/featured_phone1.png' %}" alt="phone 1">
+        <img src="{% static 'images/eisen/featured_phone2.png' %}" alt="phone 2">
+      </div>
+      <div class="small-col">
+        <img src="{% static 'images/eisen/featured_small1.png' %}" alt="small 1">
+        <img src="{% static 'images/eisen/featured_small2.png' %}" alt="small 2">
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: ALL PROJECTS (your 3rd picture layout, but 3 projects) -->
+  <section class="all-projects" id="projects">
+    <div class="project-row">
+      <div class="project-text">
+        <h3>ToothKonsulta</h3>
+        <p class="meta">Web-Based Dental Appointment Booking System</p>
+        <p class="meta">Senior Thesis Project</p>
+        <p class="meta">2025</p>
+        <p class="stack">PHP | Visual Studio Code | phpMyAdmin</p>
+
+        <p class="desc">
+          A web-based dental appointment booking system designed to automate scheduling by allowing
+          patients to book, reschedule, and cancel appointments online, while providing staff tools
+          for managing records and notifications.
+        </p>
+      </div>
+
+      <div class="project-media">
+        <img src="{% static 'images/eisen/tooth_laptop.png' %}" alt="">
+        <img src="{% static 'images/eisen/tooth_laptop2.png' %}" alt="">
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="project-row">
+      <div class="project-text">
+        <h3>Quantify</h3>
+        <p class="meta">Business Inventory Tracker Application</p>
+        <p class="meta">Junior Final Project</p>
+        <p class="meta">2024</p>
+        <p class="stack">Kotlin | Android Studio | Firebase</p>
+
+        <p class="desc">
+          Inventory tracker that helps monitor stock levels and sends low-stock alerts.
+        </p>
+      </div>
+
+      <div class="project-media phones">
+        <img src="{% static 'images/eisen/quantify1.png' %}" alt="">
+        <img src="{% static 'images/eisen/quantify2.png' %}" alt="">
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- THIRD PROJECT -->
+    <div class="project-row">
+      <div class="project-text">
+        <h3>Project 3 Title</h3>
+        <p class="meta">Short subtitle</p>
+        <p class="meta">2024/2025</p>
+        <p class="stack">Tech stack here</p>
+
+        <p class="desc">
+          Write your 3rd project description here.
+        </p>
+      </div>
+
+      <div class="project-media">
+        <img src="{% static 'images/eisen/project3.png' %}" alt="">
+      </div>
+    </div>
+  </section>
 
 </body>
 </html>
