@@ -35,7 +35,7 @@ body.eisen-scroll{
   max-width: none;
 
   /* add space for navbar height */
-  padding-top: 40px; /* adjust to 100px / 140px if needed */
+  padding-top: 120px; /* adjust to 100px / 140px if needed */
 
   min-height: 100vh;
 
