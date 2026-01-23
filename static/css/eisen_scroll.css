@@ -16,7 +16,12 @@ body.eisen-scroll{
 
 
 /* navbar already in style.css */
-.navbar{ position: sticky; top: 0; z-index: 20; }
+.navbar{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 999;
+  background: transparent; /* keep it clean on top of hero */
+}
 
 /* HERO */
 .eisen-hero{ 
