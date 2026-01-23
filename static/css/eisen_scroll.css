@@ -24,22 +24,21 @@ body.eisen-scroll{
 }
 
 /* HERO */
-.eisen-hero{ 
-  margin: 0 !important;
-  max-width: none !important;
-  width: 100% !important;
+.eisen-hero{
+  width: 100%;
+  margin: 0;
+  max-width: none;
 
-  min-height: calc(100vh - 90px);
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  align-items: center;
-  padding: 40px 70px;
+  /* add space for navbar height */
+  padding-top: 120px; /* adjust to 100px / 140px if needed */
 
-  background: url("../images/eisen/hero_bg.svg") no-repeat center center;
+  min-height: 100vh;
+
+  background: url("../images/eisen/hero_bg.svg") no-repeat top center;
   background-size: cover;
 
-  /* optional "fixed" effect */
-  background-attachment: fixed;
+  /* IMPORTANT: background scrolls normally */
+  background-attachment: scroll;
 }
 
 .hero h1,
