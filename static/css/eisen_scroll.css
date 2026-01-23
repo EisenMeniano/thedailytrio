@@ -29,6 +29,8 @@ body.eisen-scroll{
   /* CHANGE THIS BACKGROUND */
   background: url("../images/eisen/hero_bg.svg") no-repeat center center;
   background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 
