@@ -1,16 +1,19 @@
 html { scroll-behavior: smooth; }
 
 body.eisen-scroll{
-  background: #0b0020 !important;
-}
-
-body.eisen-scroll{
   margin: 0;
   min-height: 100vh;
-  background: #0b0020;
+
+  /* THIS is the important part: remove homepage background image */
+  background-image: none !important;
+
+  /* your Eisen page background */
+  background-color: #0b0020 !important;
+
   color: white;
   overflow-x: hidden;
 }
+
 
 /* navbar already in style.css */
 .navbar{ position: sticky; top: 0; z-index: 20; }
