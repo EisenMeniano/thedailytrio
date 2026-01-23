@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import Http404
 
+
 def login_view(request):
     if request.method == "POST":
         username = request.POST['username']
@@ -19,13 +20,17 @@ def login_view(request):
 
     return render(request, 'login.html')
 
+
 @login_required(login_url='login')
 def index(request):
     return render(request, 'home.html')
 
+
 def logout_view(request):
     logout(request)
     return redirect('login')
+
+
 def portfolio_view(request, person):
     person = person.lower()
 
@@ -37,5 +42,21 @@ def portfolio_view(request, person):
 
     if person not in templates:
         raise Http404("Portfolio not found")
+
+    return render(request, templates[person])
+
+
+def portfolio_main_view(request, person):
+    person = person.lower()
+
+    templates = {
+        "eisen": "portfolio/eisen_main.html",
+        # later you can add these:
+        # "abi": "portfolio/abi_main.html",
+        # "mayumi": "portfolio/mayumi_main.html",
+    }
+
+    if person not in templates:
+        raise Http404("Portfolio main page not found")
 
     return render(request, templates[person])
