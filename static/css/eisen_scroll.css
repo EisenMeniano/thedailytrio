@@ -19,7 +19,7 @@ body.eisen-scroll{
 .navbar{ position: sticky; top: 0; z-index: 20; }
 
 /* HERO */
-.hero{
+.eisen-hero{ 
   margin: 0 !important;
   max-width: none !important;
   width: 100% !important;

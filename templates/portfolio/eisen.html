@@ -14,8 +14,8 @@
 
   {% include 'partials/navbar.html' %}
 
-  <!-- SECTION 1: HERO (your 1st picture) -->
-  <section class="hero" id="top">
+  <!-- SECTION 1: HERO (top) -->
+  <section class="eisen-hero" id="top">
     <div class="hero-left">
       <h1 class="hero-title">
         Hi,<br>
@@ -38,17 +38,19 @@
     </div>
   </section>
 
-  <!-- SECTION 2: FEATURED PROJECTS (your 2nd picture) -->
+  <!-- SECTION 2: FEATURED PROJECTS -->
   <section class="featured" id="featured">
     <h2>Featured Projects</h2>
 
     <div class="featured-grid">
       <img src="{% static 'images/eisen/featured1.png' %}" alt="featured 1" class="big-left">
       <img src="{% static 'images/eisen/featured2.png' %}" alt="featured 2" class="big-left">
+
       <div class="phone-col">
         <img src="{% static 'images/eisen/featured_phone1.png' %}" alt="phone 1">
         <img src="{% static 'images/eisen/featured_phone2.png' %}" alt="phone 2">
       </div>
+
       <div class="small-col">
         <img src="{% static 'images/eisen/featured_small1.png' %}" alt="small 1">
         <img src="{% static 'images/eisen/featured_small2.png' %}" alt="small 2">
@@ -56,8 +58,10 @@
     </div>
   </section>
 
-  <!-- SECTION 3: ALL PROJECTS (your 3rd picture layout, but 3 projects) -->
+  <!-- SECTION 3: ALL PROJECTS (3 projects) -->
   <section class="all-projects" id="projects">
+
+    <!-- PROJECT 1 -->
     <div class="project-row">
       <div class="project-text">
         <h3>ToothKonsulta</h3>
@@ -81,6 +85,7 @@
 
     <hr>
 
+    <!-- PROJECT 2 -->
     <div class="project-row">
       <div class="project-text">
         <h3>Quantify</h3>
@@ -102,7 +107,7 @@
 
     <hr>
 
-    <!-- THIRD PROJECT -->
+    <!-- PROJECT 3 -->
     <div class="project-row">
       <div class="project-text">
         <h3>Project 3 Title</h3>
@@ -119,6 +124,7 @@
         <img src="{% static 'images/eisen/project3.png' %}" alt="">
       </div>
     </div>
+
   </section>
 
 </body>
